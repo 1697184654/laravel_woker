@@ -13,6 +13,27 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::get('/user', function (Request $request) {
     return $request->user();
+})->middleware('auth:api');
+
+Route::group(['prefix' => 'index'] ,function(){
+
+    Route::any('index','IndexController@index');
+
+});
+
+
+/**
+ * 认证
+ */
+Route::group(['prefix'=>'auth'],function(){
+
+
+
+    Route::post('login','AuthController@login')->name('authLogin');
+
+
+
+
 });
