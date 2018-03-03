@@ -27,6 +27,8 @@ return [
     | applications. A default option is provided that is compatible with
     | the Mailgun mail service which will provide reliable deliveries.
     |
+    | host: qq => smtp.qq.com,163 => smtp.163.com
+    |
     */
 
     'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
@@ -40,7 +42,7 @@ return [
     | users of the application. Like the host we have set this value to
     | stay compatible with the Mailgun e-mail application by default.
     |
-    | port : qq-smtp:465,163-smtp:465
+    | port : qq-smtp => 465 , 163-smtp => 465
     |
     */
 
@@ -54,6 +56,8 @@ return [
     | You may wish for all e-mails sent by your application to be sent from
     | the same address. Here, you may specify a name and address that is
     | used globally for all e-mails that are sent by your application.
+    |
+    | 在QQ邮箱和网易邮箱中：MAIL_FROM_ADDRESS 必须和MAIL_USERNAME 一致
     |
     */
 
@@ -71,7 +75,7 @@ return [
     | the application send e-mail messages. A sensible default using the
     | transport layer security protocol should provide great security.
     |
-    | tls/ssl
+    | 加密方式：有tls和ssl，两种加密方式
     |
     */
 
@@ -85,6 +89,9 @@ return [
     | If your SMTP server requires a username for authentication, you should
     | set it here. This will get used to authenticate with your server on
     | connection. You may also set the "password" value below this one.
+    |
+    | MAIL_USERNAME 邮箱账号
+    | password 为授权码，非登陆密码
     |
     */
 
