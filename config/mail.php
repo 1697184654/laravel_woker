@@ -40,9 +40,11 @@ return [
     | users of the application. Like the host we have set this value to
     | stay compatible with the Mailgun e-mail application by default.
     |
+    | port : qq-smtp:465,163-smtp:465
+    |
     */
 
-    'port' => env('MAIL_PORT', 587),
+    'port' => env('MAIL_PORT', 465),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,8 +58,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', env('MAIL_USERNAME')),
+        'name' => env('MAIL_FROM_NAME', 'chenwenlong'),
     ],
 
     /*
@@ -69,9 +71,11 @@ return [
     | the application send e-mail messages. A sensible default using the
     | transport layer security protocol should provide great security.
     |
+    | tls/ssl
+    |
     */
 
-    'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+    'encryption' => env('MAIL_ENCRYPTION', 'ssl'),
 
     /*
     |--------------------------------------------------------------------------
